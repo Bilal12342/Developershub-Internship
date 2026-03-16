@@ -2,21 +2,22 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data = pd.read_csv('titanic.csv')
+data = sns.load_dataset('iris')
 
 print(data.head())
 print(data.shape)
 print(data.columns)
 
-sns.scatterplot(x='Age', y='Fare', data=data)
-plt.title('Age vs Fare')
+
+sns.scatterplot(x='sepal_length', y='petal_length', data=data)
+plt.title('Sepal Length vs Petal Length')
 plt.show()
 
-sns.boxplot(x='Survived', y='Age', data=data)
-plt.title('Age Distribution by Survival')
+sns.boxplot(x='species', y='sepal_length', data=data)
+plt.title('Sepal Length Distribution by Species')
 plt.show()
 
-sns.countplot(x='Pclass', hue='Survived', data=data)
-plt.title('Survival Count by Passenger Class')
+sns.countplot(x='species', hue='petal_length', data=data)
+plt.title('Petal Length Count by Species')
 plt.show()
 
